@@ -31,7 +31,8 @@
 
 	async function fetchPlayerData() {
 		try {
-			const response = await fetch(`${API_BASE_URL}/getallplayers?key=${key}`);
+			// const response = await fetch(`${API_BASE_URL}/getallplayers?key=${key}`);
+			const response = await fetch(`api/getallplayers?key=${key}`);
 			const data = await response.json();
 
 			items = data;
