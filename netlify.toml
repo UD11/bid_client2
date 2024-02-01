@@ -1,0 +1,18 @@
+[build]
+  # The publish directory is the directory where the built site will be placed.
+  publish = "/build"
+
+  # The base directory is the directory that contains the deploy-ready version of your site.
+  # If it is set to the root of your repo (as it is below), it does not need to be explicitly set.
+  # It's only included here for demonstration purposes.
+  base = "/"
+
+  # The command that will be run to build the site.
+  command = "npm run build"
+
+[[redirects]]
+  # Redirect rule for /api/* to http://3.109.132.229:8000/api/:splat
+  from = "/api/*"
+  to = "http://3.109.132.229:8000/api/:splat"
+  status = 200
+  force = true
