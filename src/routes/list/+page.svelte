@@ -14,7 +14,7 @@
 	import { Button, Modal } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	import Marquee from 'svelte-fast-marquee';
-	import { API_BASE_URL } from '../../url';
+	// import { API_BASE_URL } from '../../url';
 
 	let scrollingModal = false;
 	let searchTerm = '';
@@ -43,7 +43,8 @@
 
 	async function fetchRecords() {
 		try {
-			const response = await fetch(`${API_BASE_URL}/records`);
+			// const response = await fetch(`${API_BASE_URL}/records`);
+			const response = await fetch(`api/records`);
 			records = await response.json();
 			console.log(records);
 		} catch (error) {
@@ -64,7 +65,8 @@
 
 	async function fetchAllTeamData() {
 		try {
-			const resposne = await fetch(`${API_BASE_URL}/getallteam`);
+			// const resposne = await fetch(`${API_BASE_URL}/getallteam`);
+			const resposne = await fetch(`api/getallteam`);
 			allteamData = await resposne.json();
 		} catch (error) {
 			console.log(error);

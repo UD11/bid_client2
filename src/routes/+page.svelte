@@ -19,7 +19,7 @@
 	} from 'flowbite-svelte';
 	import { ExclamationCircleSolid } from 'flowbite-svelte-icons';
 	import axios from 'axios';
-	import { API_BASE_URL } from '../url';
+	// import { API_BASE_URL } from '../url';
 	import { Carousel, Thumbnails } from 'flowbite-svelte';
 	import image from '../assets/bg.jpg';
 	import image1 from '../assets/bg2.jpg';
@@ -138,7 +138,7 @@
 		try {
 			if (password_confirmed && okRegister) {
 				console.log('Sending request:', formData);
-				const response = await axios.post(`${API_BASE_URL}/signup`, formData, {
+				const response = await axios.post(`api/signup`, formData, {
 					headers: {
 						'Content-Type': 'multipart/form-data'
 					}
