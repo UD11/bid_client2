@@ -97,7 +97,7 @@
 		<TableBodyRow>
 			{#each allteamData as teamdata}
 				<TableBodyCell class="m-auto text-black">
-					<div class="flex flex-col rounded-md p-2 shadow-sm shadow-purple-600">
+					<div class="flex flex-col rounded-md p-2 shadow-md shadow-purple-700">
 						<div class="flex flex-row space-x-1 font-mono font-bold text-gray-500">
 							Team:
 							<div class="text-balance font-mono font-bold text-black">
@@ -125,11 +125,11 @@
 	</Marquee>
 {/if}
 <!-- </div> -->
-<div class="min-w-screen mt-2 min-h-screen justify-center bg-white p-2 md:flex">
-	<div class="">
-		<div>
+<div class="min-w-screen mt-2 min-h-screen justify-center bg-white dark:bg-black p-2 md:flex">
+	<div class="dark:bg-black">
+		<div class="">
 			<div class="mr-2 flex h-2/4 flex-col justify-center">
-				<Card class="h-4/5 w-auto shadow-md shadow-green-600">
+				<Card class="h-4/5 w-auto shadow-lg shadow-green-800 dark:bg-black">
 					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 						Current Record Values
 					</h5>
@@ -205,8 +205,8 @@
 		</div>
 	</div>
 
-	<div class="w-4/5 shadow-md shadow-cyan-500">
-		<Tabs style="underline" class=" shadow-sm shadow-cyan-500">
+	<div class="w-4/5 shadow-lg shadow-cyan-600">
+		<Tabs style="underline" class=" shadow-md shadow-cyan-600">
 			<TabItem open on:click={() => handletab('all')} title="All Players">
 				<!-- <div class="w-5/6 "> -->
 				<TableSearch

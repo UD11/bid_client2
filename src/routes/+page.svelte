@@ -15,7 +15,8 @@
 		FooterLink,
 		FooterCopyright,
 		FooterLinkGroup,
-		FooterBrand
+		FooterBrand,
+		GradientButton
 	} from 'flowbite-svelte';
 	import { ExclamationCircleSolid } from 'flowbite-svelte-icons';
 	import axios from 'axios';
@@ -66,7 +67,8 @@
 		{ value: '1st', name: '1st' },
 		{ value: '2nd', name: '2nd' },
 		{ value: '3rd', name: '3rd' },
-		{ value: '4th', name: '4th' }
+		{ value: '4th', name: '4th' },
+		{ value: 'passout', name: 'passout' }
 	];
 
 	let department_list = [
@@ -149,7 +151,7 @@
 					isregistered = true;
 				}
 			} else {
-				toast_message = `some error occured`
+				toast_message = `some error occured`;
 				showerrortoast = true;
 			}
 		} catch (error) {
@@ -307,8 +309,12 @@
 				<Label for="with_helper" class="pb-2">Upload Image File</Label>
 				<Fileupload id="with_helper" class="mb-2" on:change={handlefilechange} />
 				<Helper>MAX IMAGE FILE LIMIT : 5MB</Helper>
-
-				<Button on:click={confirmmodal} class="mt-2">Submit</Button>
+				<div class="flex justify-between">
+					<Button on:click={confirmmodal} class="mt-2">Submit</Button>
+					<GradientButton color="pinkToOrange">
+						<a href="/list">Let's see the players!</a></GradientButton
+					>
+				</div>
 
 				<Modal title="Are you sure you want to submit" bind:open={defaultModal} autoclose>
 					<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
