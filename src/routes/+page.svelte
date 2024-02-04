@@ -11,16 +11,12 @@
 		Toast,
 		Fileupload,
 		Footer,
-		FooterIcon,
-		FooterLink,
 		FooterCopyright,
-		FooterLinkGroup,
-		FooterBrand,
 		GradientButton
 	} from 'flowbite-svelte';
 	import { ExclamationCircleSolid } from 'flowbite-svelte-icons';
 	import axios from 'axios';
-	// import { API_BASE_URL } from '../url';
+
 	import { Carousel, Thumbnails } from 'flowbite-svelte';
 	import image from '../assets/bg.jpg';
 	import image1 from '../assets/bg2.jpg';
@@ -34,7 +30,6 @@
 	let isplayer = false;
 	let isloading = false;
 	let isregistered = false;
-	let confirm_password = '';
 
 	let images = [
 		{ src: image, alt: 'Image 1' },
@@ -50,7 +45,7 @@
 		email: '',
 		username: '',
 		year: '',
-		password: '',
+		password: 'default',
 		file: null,
 		department: '',
 		playerposition: 'NA'
@@ -68,7 +63,7 @@
 		{ value: '2nd', name: '2nd' },
 		{ value: '3rd', name: '3rd' },
 		{ value: '4th', name: '4th' },
-		{ value: 'passout', name: 'passout' }
+		{ value: 'Passout', name: 'passout' }
 	];
 
 	let department_list = [
@@ -90,9 +85,8 @@
 	];
 
 	let okRegister = false;
-	let fileSizeLimitMB = 5;
+	let fileSizeLimitMB = 7;
 	let showerrortoast = false;
-	// let showfiletoast = false;
 	let toast_message = `some error occurred`;
 
 	const handlefilechange = async (event) => {
@@ -138,7 +132,7 @@
 		formData.append('player_value', 1);
 
 		try {
-			if (password_confirmed && okRegister) {
+			if (okRegister) {
 				console.log('Sending request:', formData);
 				const response = await axios.post(`api/signup`, formData, {
 					headers: {
@@ -168,10 +162,8 @@
 		}
 	};
 
-	$: password_confirmed = formdata.password === confirm_password;
-
 	function confirmmodal() {
-		if (okRegister && password_confirmed) {
+		if (okRegister) {
 			defaultModal = true;
 		} else {
 			showerrortoast = true;
@@ -191,7 +183,7 @@
 			</Toast>
 		</div>
 	{/if}
-	<div class="md:flex md:flex-row">
+	<div class="md:flex md:flex-row md:items-center md:justify-center">
 		<div class="m-10 max-w-3xl space-y-4 rounded-2xl">
 			<Carousel {images} {forward} let:Indicators let:Controls bind:index>
 				<Controls />
@@ -279,39 +271,15 @@
 						</div>
 					{/if}
 				</div>
-				<div class="mb-2">
-					<Label for="password" class="mb-2">Password</Label>
-					<Input
-						type="password"
-						id="password"
-						placeholder="•••••••••"
-						bind:value={formdata.password}
-						required
-					/>
-				</div>
-				<div class="mb-2">
-					<Label for="confirm_password" class="mb-2">Confirm password</Label>
-					<Input
-						type="password"
-						id="confirm_password"
-						bind:value={confirm_password}
-						on:input{checkPassword()}
-						placeholder="•••••••••"
-						required
-					/>
-				</div>
-				{#if !password_confirmed}
-					<Helper class="mt-2" color="red"
-						><span class="font-medium">passwords don't match!</span></Helper
-					>
-				{/if}
 
 				<Label for="with_helper" class="pb-2">Upload Image File</Label>
 				<Fileupload id="with_helper" class="mb-2" on:change={handlefilechange} />
 				<Helper>MAX IMAGE FILE LIMIT : 5MB</Helper>
 				<div class="flex justify-between">
 					<Button on:click={confirmmodal} class="mt-2">Submit</Button>
-					<GradientButton color="pinkToOrange">
+				</div>
+				<div class="mt-2 min-w-full">
+					<GradientButton color="pinkToOrange" class="min-w-full">
 						<a href="/list">Let's see the players!</a></GradientButton
 					>
 				</div>

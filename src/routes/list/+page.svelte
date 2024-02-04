@@ -324,6 +324,7 @@
 						<TableHeadCell>Co-Owner</TableHeadCell>
 						<TableHeadCell>Captain</TableHeadCell>
 						<TableHeadCell>Vice-Captain</TableHeadCell>
+						<TableHeadCell>Star Player</TableHeadCell>
 						<TableHeadCell>Purse Value</TableHeadCell>
 						<TableHeadCell>Players</TableHeadCell>
 						<TableHeadCell>
@@ -338,6 +339,7 @@
 								<TableBodyCell>{team_data.coowner.firstname}</TableBodyCell>
 								<TableBodyCell>{team_data.captain.firstname}</TableBodyCell>
 								<TableBodyCell>{team_data.vicecaptain.firstname}</TableBodyCell>
+								<TableBodyCell>{team_data.marquee.firstname}</TableBodyCell>
 								<TableBodyCell>{team_data.pot}</TableBodyCell>
 								<TableBodyCell>
 									<!-- <Button on:click={() => (scrollingModal = true)} autoclose>Scrolling modal</Button -->
