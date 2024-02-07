@@ -85,7 +85,7 @@
 	];
 
 	let okRegister = false;
-	let fileSizeLimitMB = 7;
+	let fileSizeLimitMB = 10;
 	let showerrortoast = false;
 	let toast_message = `some error occurred`;
 
@@ -274,7 +274,7 @@
 
 				<Label for="with_helper" class="pb-2">Upload Image File</Label>
 				<Fileupload id="with_helper" class="mb-2" on:change={handlefilechange} />
-				<Helper>MAX IMAGE FILE LIMIT : 5MB</Helper>
+				<Helper>MAX IMAGE FILE LIMIT : {fileSizeLimitMB}MB</Helper>
 				<div class="flex justify-between">
 					<Button on:click={confirmmodal} class="mt-2">Submit</Button>
 				</div>
