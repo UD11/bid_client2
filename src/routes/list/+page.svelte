@@ -129,7 +129,7 @@
 	<div class="">
 		<div class="flex justify-center">
 			<div class="mr-2 flex h-2/4 flex-col justify-center">
-				<Card class="h-4/5 w-auto shadow-lg shadow-green-800 dark:bg-black m-4">
+				<Card class="h-4/5 w-auto shadow-lg shadow-green-800 dark:bg-black mb-4">
 					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 						Current Record Values
 					</h5>
