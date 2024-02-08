@@ -129,7 +129,7 @@
 		formData.append('captain', false);
 		formData.append('marquee', false);
 		formData.append('host', false);
-		formData.append('player_value', 1);
+		formData.append('player_value', 100);
 
 		try {
 			if (okRegister) {
@@ -241,12 +241,12 @@
 
 				<div class="flex flex-row space-x-5">
 					<div class="mb-2 w-1/2">
-						<Label for="department">Select your department</Label>
+						<Label for="department">Department</Label>
 						<Select id="department" items={department_list} bind:value={formdata.department} />
 					</div>
 
 					<div class="mb-2 w-1/2">
-						<Label for="year">Select your year</Label>
+						<Label for="year">Year</Label>
 						<Select id="year" items={year_list} bind:value={formdata.year} />
 					</div>
 				</div>

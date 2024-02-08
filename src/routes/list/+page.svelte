@@ -210,7 +210,7 @@
 			<TabItem open on:click={() => handletab('all')} title="All Players">
 				<!-- <div class="w-5/6 "> -->
 				<TableSearch
-					placeholder="Search by maker name"
+					placeholder="Search by player name"
 					hoverable={true}
 					bind:inputValue={searchTerm}
 				>
@@ -246,11 +246,11 @@
 			<TabItem on:click={() => handletab('sold')} title="Sold Players">
 				<!-- <div class="w-5/6"> -->
 				<TableSearch
-					placeholder="Search by maker name"
+					placeholder="Search by player name"
 					hoverable={true}
 					bind:inputValue={searchTerm}
 				>
-					<Table hoverable={true}>
+					<Table hoverable={true} striped={true}>
 						<TableHead>
 							<TableHeadCell></TableHeadCell>
 							<TableHeadCell>Name</TableHeadCell>
@@ -282,11 +282,11 @@
 			<TabItem on:click={() => handletab('unsold')} title="Unsold Players">
 				<!-- <div class="w-5/6"> -->
 				<TableSearch
-					placeholder="Search by maker name"
+					placeholder="Search by player name"
 					hoverable={true}
 					bind:inputValue={searchTerm}
 				>
-					<Table>
+					<Table hoverable={true} striped={true}>
 						<TableHead>
 							<TableHeadCell></TableHeadCell>
 							<TableHeadCell>Name</TableHeadCell>
@@ -317,7 +317,7 @@
 			</TabItem>
 
 			<TabItem title="Teams">
-				<Table hoverable={true}>
+				<Table hoverable={true} striped={true}>
 					<TableHead>
 						<TableHeadCell>Team Name</TableHeadCell>
 						<TableHeadCell>Owner</TableHeadCell>
