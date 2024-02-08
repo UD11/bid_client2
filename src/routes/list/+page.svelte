@@ -126,10 +126,10 @@
 {/if}
 <!-- </div> -->
 <div class="min-w-screen mt-2 min-h-screen justify-center bg-white dark:bg-black p-2 md:flex">
-	<div class="dark:bg-black">
-		<div class="">
+	<div class="">
+		<div class="flex justify-center">
 			<div class="mr-2 flex h-2/4 flex-col justify-center">
-				<Card class="h-4/5 w-auto shadow-lg shadow-green-800 dark:bg-black">
+				<Card class="h-4/5 w-auto shadow-lg shadow-green-800 dark:bg-black m-4">
 					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 						Current Record Values
 					</h5>
@@ -205,7 +205,7 @@
 		</div>
 	</div>
 
-	<div class="w-4/5 shadow-lg shadow-cyan-600">
+	<div class="md:w-4/5 shadow-lg shadow-cyan-600">
 		<Tabs style="underline" class=" shadow-md shadow-cyan-600">
 			<TabItem open on:click={() => handletab('all')} title="All Players">
 				<!-- <div class="w-5/6 "> -->
