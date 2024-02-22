@@ -9,7 +9,9 @@
 		TableHead,
 		TableHeadCell,
 		TableSearch,
-		Card
+		Card,
+		Footer,
+		FooterCopyright
 	} from 'flowbite-svelte';
 	import { Button, Modal } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -266,7 +268,7 @@
 									<TableBodyCell>
 										<Avatar src={item.user_image} alt="alt" class="flex-shrink-0" />
 									</TableBodyCell>
-									<TableBodyCell>{item.firstname}</TableBodyCell>
+									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
 									<TableBodyCell>{item.year}</TableBodyCell>
 									<TableBodyCell>{item.department}</TableBodyCell>
@@ -302,7 +304,7 @@
 									<TableBodyCell>
 										<Avatar src={item.user_image} alt="alt" class="flex-shrink-0" />
 									</TableBodyCell>
-									<TableBodyCell>{item.firstname}</TableBodyCell>
+									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
 									<TableBodyCell>{item.year}</TableBodyCell>
 									<TableBodyCell>{item.department}</TableBodyCell>
@@ -364,7 +366,7 @@
 											<TableBody class="divide-y">
 												{#each filteredTeam[0].players as player}
 													<TableBodyRow>
-														<TableBodyCell>{player.username}</TableBodyCell>
+														<TableBodyCell>{player.firstname+' '+player.lastname}</TableBodyCell>
 														<TableBodyCell>{player.player_position}</TableBodyCell>
 														<TableBodyCell>{player.year}</TableBodyCell>
 														<TableBodyCell>{player.department}</TableBodyCell>
@@ -383,3 +385,7 @@
 		</Tabs>
 	</div>
 </div>
+<Footer class="mb-2 p-2">
+	<hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
+	<FooterCopyright href="/" by="ICL-2024" />
+</Footer>
