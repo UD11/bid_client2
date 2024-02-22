@@ -230,7 +230,7 @@
 									<TableBodyCell>
 										<Avatar src={item.user_image} alt="alt" class="flex-shrink-0" />
 									</TableBodyCell>
-									<TableBodyCell>{item.firstname}</TableBodyCell>
+									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
 									<TableBodyCell>{item.year}</TableBodyCell>
 									<TableBodyCell>{item.department}</TableBodyCell>
