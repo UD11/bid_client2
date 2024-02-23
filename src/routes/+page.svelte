@@ -274,7 +274,11 @@
 
 				<Label for="with_helper" class="pb-2">Upload Image File</Label>
 				<Fileupload id="with_helper" class="mb-2" on:change={handlefilechange} />
-				<Helper>MAX IMAGE FILE LIMIT : {fileSizeLimitMB}MB</Helper>
+				<!-- <div class="flex flex-row"> -->
+					<Helper>NOTE:</Helper>
+					<Helper>MAX IMAGE FILE LIMIT : {fileSizeLimitMB}MB</Helper>
+					<Helper>FILE NAME SHOULD BE WITHIN 20 CHARACTERS LIMIT</Helper>
+				<!-- </div> -->
 				<div class="flex justify-between">
 					<Button on:click={confirmmodal} class="mt-2">Submit</Button>
 				</div>
@@ -314,6 +318,6 @@
 	</div>
 </div>
 <Footer class="mb-2 p-2">
-	<hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
+	<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 	<FooterCopyright href="/" by="ICL-2024" />
 </Footer>
