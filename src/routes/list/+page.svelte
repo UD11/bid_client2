@@ -86,8 +86,16 @@
 		fetchRecords();
 	});
 
+	// $: filteredItems = items.filter(
+	// 	(item) => item.firstname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+	// );
+
 	$: filteredItems = items.filter(
-		(item) => item.firstname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+		(item) =>
+			item.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			item.lastname.toLowerCase().includes(searchTerm.toLowerCase())||
+			item.player_position.toLowerCase().includes(searchTerm.toLowerCase())||
+			item.department.toLowerCase().includes(searchTerm.toLowerCase())
 	);
 
 	$: filteredTeam = allteamData.filter((team_data) => team_data.id == teamId);
@@ -127,11 +135,11 @@
 	</Marquee>
 {/if}
 <!-- </div> -->
-<div class="min-w-screen mt-2 min-h-screen justify-center bg-white dark:bg-black p-2 md:flex">
+<div class="min-w-screen mt-2 min-h-screen justify-center bg-white p-2 dark:bg-black md:flex">
 	<div class="">
 		<div class="flex justify-center">
 			<div class="mr-2 flex h-2/4 flex-col justify-center">
-				<Card class="h-4/5 w-auto shadow-lg shadow-green-800 dark:bg-black mb-4">
+				<Card class="mb-4 h-4/5 w-auto shadow-lg shadow-green-800 dark:bg-black">
 					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 						Current Record Values
 					</h5>
@@ -200,14 +208,14 @@
 							</div>
 						</div>
 					{/if}
-					
+
 					<Button class="mt-2"><a href="/">Register as a Player</a></Button>
 				</Card>
 			</div>
 		</div>
 	</div>
 
-	<div class="md:w-4/5 shadow-lg shadow-cyan-600">
+	<div class="shadow-lg shadow-cyan-600 md:w-4/5">
 		<Tabs style="underline" class=" shadow-md shadow-cyan-600">
 			<TabItem open on:click={() => handletab('all')} title="All Players">
 				<!-- <div class="w-5/6 "> -->
@@ -366,7 +374,8 @@
 											<TableBody class="divide-y">
 												{#each filteredTeam[0].players as player}
 													<TableBodyRow>
-														<TableBodyCell>{player.firstname+' '+player.lastname}</TableBodyCell>
+														<TableBodyCell>{player.firstname + ' ' + player.lastname}</TableBodyCell
+														>
 														<TableBodyCell>{player.player_position}</TableBodyCell>
 														<TableBodyCell>{player.year}</TableBodyCell>
 														<TableBodyCell>{player.department}</TableBodyCell>
@@ -386,6 +395,6 @@
 	</div>
 </div>
 <Footer class="mb-2 p-2">
-	<hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
+	<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 	<FooterCopyright href="/" by="ICL-2024" />
 </Footer>
