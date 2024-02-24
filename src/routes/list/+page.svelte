@@ -95,7 +95,10 @@
 			item.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
 			item.lastname.toLowerCase().includes(searchTerm.toLowerCase())||
 			item.player_position.toLowerCase().includes(searchTerm.toLowerCase())||
-			item.department.toLowerCase().includes(searchTerm.toLowerCase())
+			item.department.toLowerCase().includes(searchTerm.toLowerCase())||
+			item.year.toLowerCase().includes(searchTerm.toLowerCase())||
+			(item.firstname.toLowerCase() + ' ' + item.lastname.toLowerCase()).includes(searchTerm.toLowerCase())
+
 	);
 
 	$: filteredTeam = allteamData.filter((team_data) => team_data.id == teamId);
