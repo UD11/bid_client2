@@ -97,6 +97,7 @@
 			item.player_position.toLowerCase().includes(searchTerm.toLowerCase()) ||
 			item.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
 			item.year.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			item.player_value.toLowerCase().includes(searchTerm.toLowerCase()) ||
 			(item.firstname.toLowerCase() + ' ' + item.lastname.toLowerCase()).includes(
 				searchTerm.toLowerCase()
 			)
@@ -224,7 +225,7 @@
 	<div class="shadow-lg shadow-cyan-600 md:w-4/5">
 		<Tabs style="underline" class=" shadow-md shadow-cyan-600">
 			<TabItem open on:click={() => handletab('all')} title="All Players">
-				<div class="font-mono font-semibold mb-1">
+				<div class="mb-1 font-mono font-semibold">
 					Found {totalsearchresults} results
 				</div>
 				<!-- <div class="w-5/6 "> -->
@@ -264,6 +265,9 @@
 			</TabItem>
 			<TabItem on:click={() => handletab('sold')} title="Sold Players">
 				<!-- <div class="w-5/6"> -->
+				<div class="mb-1 font-mono font-semibold">
+					Found {totalsearchresults} results
+				</div>
 				<TableSearch
 					placeholder="Search by player name"
 					hoverable={true}
@@ -300,6 +304,9 @@
 			</TabItem>
 			<TabItem on:click={() => handletab('unsold')} title="Unsold Players">
 				<!-- <div class="w-5/6"> -->
+				<div class="mb-1 font-mono font-semibold">
+					Found {totalsearchresults} results
+				</div>
 				<TableSearch
 					placeholder="Search by player name"
 					hoverable={true}
