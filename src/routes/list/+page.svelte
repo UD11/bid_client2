@@ -247,7 +247,7 @@
 							{#each filteredItems as item}
 								<TableBodyRow>
 									<TableBodyCell>
-										<Avatar src={item.user_image} alt="alt" class="flex-shrink-0" />
+										<Avatar src={item.user_image} alt="alt" />
 									</TableBodyCell>
 									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
