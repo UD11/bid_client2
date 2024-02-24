@@ -93,13 +93,16 @@
 	$: filteredItems = items.filter(
 		(item) =>
 			item.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-			item.lastname.toLowerCase().includes(searchTerm.toLowerCase())||
-			item.player_position.toLowerCase().includes(searchTerm.toLowerCase())||
-			item.department.toLowerCase().includes(searchTerm.toLowerCase())||
-			item.year.toLowerCase().includes(searchTerm.toLowerCase())||
-			(item.firstname.toLowerCase() + ' ' + item.lastname.toLowerCase()).includes(searchTerm.toLowerCase())
-
+			item.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			item.player_position.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			item.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			item.year.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			(item.firstname.toLowerCase() + ' ' + item.lastname.toLowerCase()).includes(
+				searchTerm.toLowerCase()
+			)
 	);
+
+	$: totalsearchresults = filteredItems.length;
 
 	$: filteredTeam = allteamData.filter((team_data) => team_data.id == teamId);
 </script>
@@ -221,6 +224,9 @@
 	<div class="shadow-lg shadow-cyan-600 md:w-4/5">
 		<Tabs style="underline" class=" shadow-md shadow-cyan-600">
 			<TabItem open on:click={() => handletab('all')} title="All Players">
+				<div class="font-mono font-semibold mb-1">
+					Found {totalsearchresults} results
+				</div>
 				<!-- <div class="w-5/6 "> -->
 				<TableSearch
 					placeholder="Search by player name"
