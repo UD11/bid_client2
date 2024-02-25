@@ -88,6 +88,7 @@
 	let fileSizeLimitMB = 10;
 	let showerrortoast = false;
 	let toast_message = `some error occurred`;
+	let site_shutdown = true;
 
 	const handlefilechange = async (event) => {
 		const fileInput = event.target;
@@ -170,7 +171,12 @@
 		}
 	}
 </script>
-
+{#if site_shutdown}
+<div>
+	Site is under maintainance for now it will be live later
+</div>
+{/if}
+{#if !site_shutdown}
 <div class="s flex min-h-screen items-center justify-center p-10">
 	{#if showerrortoast}
 		<div class="absolute right-0 top-0">
@@ -321,3 +327,4 @@
 	<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 	<FooterCopyright href="/" by="ICL-2024" />
 </Footer>
+{/if}
