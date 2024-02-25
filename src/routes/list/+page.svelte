@@ -370,11 +370,11 @@
 						{#each allteamData as team_data}
 							<TableBodyRow>
 								<TableBodyCell>{team_data.team_name}</TableBodyCell>
-								<TableBodyCell>{team_data.owner.firstname}</TableBodyCell>
-								<TableBodyCell>{team_data.coowner.firstname}</TableBodyCell>
-								<TableBodyCell>{team_data.captain.firstname}</TableBodyCell>
-								<TableBodyCell>{team_data.vicecaptain.firstname}</TableBodyCell>
-								<TableBodyCell>{team_data.marquee.firstname}</TableBodyCell>
+								<TableBodyCell>{team_data.owner.firstname + ' ' + team_data.owner.lastname}</TableBodyCell>
+								<TableBodyCell>{team_data.coowner.firstname + ' ' + team_data.coowner.lastname}</TableBodyCell>
+								<TableBodyCell>{team_data.captain.firstname + ' ' + team_data.captain.lastname}</TableBodyCell>
+								<TableBodyCell>{team_data.vicecaptain.firstname + ' ' + team_data.vicecaptain.lastname}</TableBodyCell>
+								<TableBodyCell>{team_data.marquee.firstname+ ' ' + team_data.marquee.lastname}</TableBodyCell>
 								<TableBodyCell>{team_data.pot}</TableBodyCell>
 								<TableBodyCell>
 									<!-- <Button on:click={() => (scrollingModal = true)} autoclose>Scrolling modal</Button -->
