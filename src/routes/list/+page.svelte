@@ -113,7 +113,7 @@
 
 {#if site_shutdown}
 <div>
-	Site is under maintainance for now it will be live later
+	Site will be back online soon
 </div>
 {/if}
 
