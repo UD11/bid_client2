@@ -26,6 +26,7 @@
 	let Teamdata = {};
 	let allteamData = [];
 	let filteredTeam = [];
+	let site_shutdown = false;
 
 	let teamId = 1;
 	let filteredItems = [];
@@ -108,6 +109,15 @@
 </script>
 
 <!-- <div class="shadow-lg shadow-cyan-500"> -->
+
+
+{#if site_shutdown}
+<div>
+	Site is under maintainance for now it will be live later
+</div>
+{/if}
+
+{#if !site_shutdown}
 {#if allteamData}
 	<Marquee pauseOnHover={true} speed={75} class=" ">
 		<TableBodyRow>
@@ -413,3 +423,4 @@
 	<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 	<FooterCopyright href="/" by="ICL-2024" />
 </Footer>
+{/if}
