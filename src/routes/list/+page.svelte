@@ -26,7 +26,7 @@
 	let Teamdata = {};
 	let allteamData = [];
 	let filteredTeam = [];
-	let site_shutdown = false;
+	let site_shutdown = true;
 
 	let teamId = 1;
 	let filteredItems = [];
