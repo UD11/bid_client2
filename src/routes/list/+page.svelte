@@ -84,7 +84,7 @@
 	onMount(() => {
 		fetchPlayerData();
 		fetchAllTeamData();
-		// fetchRecords();
+		fetchRecords();
 	});
 
 	// $: filteredItems = items.filter(
@@ -257,7 +257,7 @@
 							{#each filteredItems as item}
 								<TableBodyRow>
 									<TableBodyCell>
-										<Avatar src={item.user_image} alt="alt" class="flex-shrink-0" />
+										<!-- <Avatar src={item.user_image} alt="alt" class="flex-shrink-0" /> -->
 									</TableBodyCell>
 									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
@@ -296,7 +296,7 @@
 							{#each filteredItems as item}
 								<TableBodyRow>
 									<TableBodyCell>
-										<Avatar src={item.user_image} alt="alt" class="flex-shrink-0" />
+										<!-- <Avatar src={item.user_image} alt="alt" class="flex-shrink-0" /> -->
 									</TableBodyCell>
 									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
@@ -335,7 +335,7 @@
 							{#each filteredItems as item}
 								<TableBodyRow>
 									<TableBodyCell>
-										<Avatar src={item.user_image} alt="alt" class="flex-shrink-0" />
+										<!-- <Avatar src={item.user_image} alt="alt" class="flex-shrink-0" /> -->
 									</TableBodyCell>
 									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
