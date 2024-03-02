@@ -192,7 +192,7 @@
 								<div>{records.max_wk.firstname + ' ' + records.max_wk.lastname}</div>
 								<div class="flex flex-row space-x-2">
 									<div class="text-sm text-gray-500 dark:text-gray-400">
-										{records.max_wk.player_position} | {records.max_bowler.player_value}
+										{records.max_wk.player_position} | {records.max_wk.player_value}
 									</div>
 								</div>
 							</div>
@@ -205,7 +205,7 @@
 								<div>{records.max_bla.firstname + ' ' + records.max_bla.lastname}</div>
 								<div class="flex flex-row space-x-2">
 									<div class="text-sm text-gray-500 dark:text-gray-400">
-										{records.max_bla.player_position} | {records.max_bowler.player_value}
+										{records.max_bla.player_position} | {records.max_bla.player_value}
 									</div>
 								</div>
 							</div>
@@ -218,7 +218,7 @@
 								<div>{records.max_bta.firstname + ' ' + records.max_bta.lastname}</div>
 								<div class="flex flex-row space-x-2">
 									<div class="text-sm text-gray-500 dark:text-gray-400">
-										{records.max_bta.player_position} | {records.max_bowler.player_value}
+										{records.max_bta.player_position} | {records.max_bta.player_value}
 									</div>
 								</div>
 							</div>
@@ -256,9 +256,9 @@
 						<TableBody class="divide-y ">
 							{#each filteredItems as item}
 								<TableBodyRow>
-									<TableBodyCell>
+									<!-- <TableBodyCell> -->
 										<!-- <Avatar src={item.user_image} alt="alt" class="flex-shrink-0" /> -->
-									</TableBodyCell>
+									<!-- </TableBodyCell> -->
 									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
 									<TableBodyCell>{item.year}</TableBodyCell>
@@ -295,9 +295,9 @@
 						<TableBody class="divide-y">
 							{#each filteredItems as item}
 								<TableBodyRow>
-									<TableBodyCell>
+									<!-- <TableBodyCell> -->
 										<!-- <Avatar src={item.user_image} alt="alt" class="flex-shrink-0" /> -->
-									</TableBodyCell>
+									<!-- </TableBodyCell> -->
 									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
 									<TableBodyCell>{item.year}</TableBodyCell>
@@ -334,9 +334,9 @@
 						<TableBody class="divide-y">
 							{#each filteredItems as item}
 								<TableBodyRow>
-									<TableBodyCell>
+									<!-- <TableBodyCell> -->
 										<!-- <Avatar src={item.user_image} alt="alt" class="flex-shrink-0" /> -->
-									</TableBodyCell>
+									<!-- </TableBodyCell> -->
 									<TableBodyCell>{item.firstname + ' ' + item.lastname}</TableBodyCell>
 									<TableBodyCell>{item.player_position}</TableBodyCell>
 									<TableBodyCell>{item.year}</TableBodyCell>
