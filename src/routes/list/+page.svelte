@@ -84,7 +84,7 @@
 	onMount(() => {
 		fetchPlayerData();
 		fetchAllTeamData();
-		fetchRecords();
+		// fetchRecords();
 	});
 
 	// $: filteredItems = items.filter(
