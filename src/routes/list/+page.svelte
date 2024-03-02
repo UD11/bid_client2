@@ -245,7 +245,7 @@
 				>
 					<Table hoverable={true} striped={true}>
 						<TableHead>
-							<TableHeadCell></TableHeadCell>
+							<!-- <TableHeadCell></TableHeadCell> -->
 							<TableHeadCell>Name</TableHeadCell>
 							<TableHeadCell>Playing Role</TableHeadCell>
 							<TableHeadCell>Year</TableHeadCell>
@@ -284,7 +284,7 @@
 				>
 					<Table hoverable={true} striped={true}>
 						<TableHead>
-							<TableHeadCell></TableHeadCell>
+							<!-- <TableHeadCell></TableHeadCell> -->
 							<TableHeadCell>Name</TableHeadCell>
 							<TableHeadCell>Playing Role</TableHeadCell>
 							<TableHeadCell>Year</TableHeadCell>
@@ -323,7 +323,7 @@
 				>
 					<Table hoverable={true} striped={true}>
 						<TableHead>
-							<TableHeadCell></TableHeadCell>
+							<!-- <TableHeadCell></TableHeadCell> -->
 							<TableHeadCell>Name</TableHeadCell>
 							<TableHeadCell>Playing Role</TableHeadCell>
 							<TableHeadCell>Year</TableHeadCell>
