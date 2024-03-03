@@ -12,9 +12,10 @@
 		Fileupload,
 		Footer,
 		FooterCopyright,
-		GradientButton
+		GradientButton,
+		Card
 	} from 'flowbite-svelte';
-	import { ExclamationCircleSolid } from 'flowbite-svelte-icons';
+	import { ExclamationCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
 	import axios from 'axios';
 
 	import { Carousel, Thumbnails } from 'flowbite-svelte';
@@ -195,12 +196,22 @@
 					<Indicators />
 				</Carousel>
 				<Thumbnails {images} {forward} bind:index />
-				<div class="mt-2 min-w-full">
+				<!-- <div class="mt-2 min-w-full">
 					<GradientButton color="pinkToOrange" class="min-w-full">
 						<a href="/list">Let's see the players!</a></GradientButton
 					>
-				</div>
+				</div> -->
 			</div>
+
+			<Card class="h-auto">
+				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+					We will meet you at the auction!
+				</h5>
+				<div class="mb-2 mt-2 font-mono font-bold">Registration is closed for the tournament</div>
+				<Button class="w-fit">
+					<a href="/list">Player List</a><ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
+				</Button>
+			</Card>
 
 			<!-- <div>
 				<form>

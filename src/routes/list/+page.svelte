@@ -140,7 +140,7 @@
 							<div class="flex flex-row font-mono font-bold text-gray-500">
 								rem:
 								<div class="font-mono font-bold text-red-700">
-									{teamdata.players.length}/12
+									{teamdata.players.length}/13
 								</div>
 							</div>
 						</div>
