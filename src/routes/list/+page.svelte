@@ -225,7 +225,7 @@
 						</div>
 					{/if}
 
-					<Button class="mt-2"><a href="/">Register as a Player</a></Button>
+					<Button class="mt-2"><a href="/">Go to home</a></Button>
 				</Card>
 			</div>
 		</div>
