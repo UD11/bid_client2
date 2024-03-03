@@ -171,160 +171,164 @@
 		}
 	}
 </script>
+
 {#if site_shutdown}
-<div>
-	Site will be back online soon
-</div>
+	<div>Site will be back online soon</div>
 {/if}
 {#if !site_shutdown}
-<div class="s flex min-h-screen items-center justify-center p-10">
-	{#if showerrortoast}
-		<div class="absolute right-0 top-0">
-			<Toast color="orange">
-				<svelte:fragment slot="icon">
-					<ExclamationCircleSolid class="h-5 w-5" />
-					<span class="sr-only">Warning icon</span>
-				</svelte:fragment>
-				{toast_message}
-			</Toast>
-		</div>
-	{/if}
-	<div class="md:flex md:flex-row md:items-center md:justify-center">
-		<div class="m-10 max-w-3xl space-y-4 rounded-2xl">
-			<Carousel {images} {forward} let:Indicators let:Controls bind:index>
-				<Controls />
-				<Indicators />
-			</Carousel>
-			<Thumbnails {images} {forward} bind:index />
-		</div>
-
-		<div>
-			<form>
-				<div class="mb-2 grid gap-6 md:grid-cols-2">
-					<div>
-						<Label for="first_name" class="mb-2">First name</Label>
-						<Input
-							type="text"
-							id="first_name"
-							placeholder="John"
-							bind:value={formdata.firstname}
-							required
-						/>
-					</div>
-					<div>
-						<Label for="last_name" class="mb-2">Last name</Label>
-						<Input
-							type="text"
-							id="last_name"
-							placeholder="Doe"
-							bind:value={formdata.lastname}
-							required
-						/>
-					</div>
-				</div>
-
-				<div class="mb-2">
-					<Label for="email" class="mb-2">Email address</Label>
-					<Input
-						type="email"
-						id="email"
-						placeholder="john.doe@company.com"
-						bind:value={formdata.email}
-						required
-					/>
-				</div>
-
-				<div class="mb-2">
-					<Label for="username" class="mb-2">Username</Label>
-					<Input
-						type="text"
-						id="username"
-						placeholder="Username"
-						bind:value={formdata.username}
-						required
-					/>
-				</div>
-
-				<div class="flex flex-row space-x-5">
-					<div class="mb-2 w-1/2">
-						<Label for="department">Department</Label>
-						<Select id="department" items={department_list} bind:value={formdata.department} />
-					</div>
-
-					<div class="mb-2 w-1/2">
-						<Label for="year">Year</Label>
-						<Select id="year" items={year_list} bind:value={formdata.year} />
-					</div>
-				</div>
-				<div class="mb-1 mt-1">
-					<div class="mb-1 flex items-center justify-center">
-						<Checkbox aria-describedby="helper-checkbox-text" bind:checked={isplayer}
-							>are you a player ?</Checkbox
-						>
-					</div>
-
-					{#if isplayer}
-						<div>
-							<div class="mb-2 mt-2">
-								<Label for="year">Select your playing role</Label>
-								<Select
-									id="playing_position"
-									items={role_list}
-									bind:value={formdata.playerposition}
-									placeholder="Select your playing role"
-								/>
-							</div>
-						</div>
-					{/if}
-				</div>
-
-				<Label for="with_helper" class="pb-2">Upload Image File</Label>
-				<Fileupload id="with_helper" class="mb-2" on:change={handlefilechange} />
-				<!-- <div class="flex flex-row"> -->
-					<Helper>NOTE:</Helper>
-					<Helper>MAX IMAGE FILE LIMIT : {fileSizeLimitMB}MB</Helper>
-					<Helper>FILE NAME SHOULD BE WITHIN 20 CHARACTERS LIMIT</Helper>
-				<!-- </div> -->
-				<div class="flex justify-between">
-					<Button on:click={confirmmodal} class="mt-2">Submit</Button>
-				</div>
+	<div class="s flex min-h-screen items-center justify-center p-10">
+		{#if showerrortoast}
+			<div class="absolute right-0 top-0">
+				<Toast color="orange">
+					<svelte:fragment slot="icon">
+						<ExclamationCircleSolid class="h-5 w-5" />
+						<span class="sr-only">Warning icon</span>
+					</svelte:fragment>
+					{toast_message}
+				</Toast>
+			</div>
+		{/if}
+		<div class="md:flex md:flex-row md:items-center md:justify-center">
+			<div class="m-10 max-w-3xl space-y-4 rounded-2xl">
+				<Carousel {images} {forward} let:Indicators let:Controls bind:index>
+					<Controls />
+					<Indicators />
+				</Carousel>
+				<Thumbnails {images} {forward} bind:index />
 				<div class="mt-2 min-w-full">
 					<GradientButton color="pinkToOrange" class="min-w-full">
 						<a href="/list">Let's see the players!</a></GradientButton
 					>
 				</div>
+			</div>
 
-				<Modal title="Are you sure you want to submit" bind:open={defaultModal} autoclose>
-					<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-						Are you sure about the data provided in the Sign up form ?
-					</p>
-					<svelte:fragment slot="footer">
-						<Button on:click={handlesubmit}>Yes, Submit</Button>
-						<Button color="alternative">Decline</Button>
-					</svelte:fragment>
-				</Modal>
-				{#if isloading}
-					<Modal title="Are you sure you want to submit" bind:open={isloading} autoclose={false}>
+			<!-- <div>
+				<form>
+					<div class="mb-2 grid gap-6 md:grid-cols-2">
+						<div>
+							<Label for="first_name" class="mb-2">First name</Label>
+							<Input
+								type="text"
+								id="first_name"
+								placeholder="John"
+								bind:value={formdata.firstname}
+								required
+							/>
+						</div>
+						<div>
+							<Label for="last_name" class="mb-2">Last name</Label>
+							<Input
+								type="text"
+								id="last_name"
+								placeholder="Doe"
+								bind:value={formdata.lastname}
+								required
+							/>
+						</div>
+					</div>
+
+					<div class="mb-2">
+						<Label for="email" class="mb-2">Email address</Label>
+						<Input
+							type="email"
+							id="email"
+							placeholder="john.doe@company.com"
+							bind:value={formdata.email}
+							required
+						/>
+					</div>
+
+					<div class="mb-2">
+						<Label for="username" class="mb-2">Username</Label>
+						<Input
+							type="text"
+							id="username"
+							placeholder="Username"
+							bind:value={formdata.username}
+							required
+						/>
+					</div>
+
+					<div class="flex flex-row space-x-5">
+						<div class="mb-2 w-1/2">
+							<Label for="department">Department</Label>
+							<Select id="department" items={department_list} bind:value={formdata.department} />
+						</div>
+
+						<div class="mb-2 w-1/2">
+							<Label for="year">Year</Label>
+							<Select id="year" items={year_list} bind:value={formdata.year} />
+						</div>
+					</div>
+					<div class="mb-1 mt-1">
+						<div class="mb-1 flex items-center justify-center">
+							<Checkbox aria-describedby="helper-checkbox-text" bind:checked={isplayer}
+								>are you a player ?</Checkbox
+							>
+						</div>
+
+						{#if isplayer}
+							<div>
+								<div class="mb-2 mt-2">
+									<Label for="year">Select your playing role</Label>
+									<Select
+										id="playing_position"
+										items={role_list}
+										bind:value={formdata.playerposition}
+										placeholder="Select your playing role"
+									/>
+								</div>
+							</div>
+						{/if}
+					</div>
+
+					<Label for="with_helper" class="pb-2">Upload Image File</Label>
+					<Fileupload id="with_helper" class="mb-2" on:change={handlefilechange} />
+
+					<Helper>NOTE:</Helper>
+					<Helper>MAX IMAGE FILE LIMIT : {fileSizeLimitMB}MB</Helper>
+					<Helper>FILE NAME SHOULD BE WITHIN 20 CHARACTERS LIMIT</Helper>
+
+					<div class="flex justify-between">
+						<Button on:click={confirmmodal} class="mt-2">Submit</Button>
+					</div>
+					<div class="mt-2 min-w-full">
+						<GradientButton color="pinkToOrange" class="min-w-full">
+							<a href="/list">Let's see the players!</a></GradientButton
+						>
+					</div>
+
+					<Modal title="Are you sure you want to submit" bind:open={defaultModal} autoclose>
+						<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+							Are you sure about the data provided in the Sign up form ?
+						</p>
 						<svelte:fragment slot="footer">
-							<Button disabled>
-								<Spinner class="me-3" size="4" color="white" />
-								Loading ...
-							</Button>
+							<Button on:click={handlesubmit}>Yes, Submit</Button>
+							<Button color="alternative">Decline</Button>
 						</svelte:fragment>
 					</Modal>
-				{/if}
-				{#if isregistered}
-					<Modal title="you are successfully registered !" bind:open={isregistered} autoclose>
-						<div>Click on Continue to Join your fellow players</div>
-						<Button on:click={() => (window.location.href = '/list')}>Continue</Button>
-					</Modal>
-				{/if}
-			</form>
+					{#if isloading}
+						<Modal title="Are you sure you want to submit" bind:open={isloading} autoclose={false}>
+							<svelte:fragment slot="footer">
+								<Button disabled>
+									<Spinner class="me-3" size="4" color="white" />
+									Loading ...
+								</Button>
+							</svelte:fragment>
+						</Modal>
+					{/if}
+					{#if isregistered}
+						<Modal title="you are successfully registered !" bind:open={isregistered} autoclose>
+							<div>Click on Continue to Join your fellow players</div>
+							<Button on:click={() => (window.location.href = '/list')}>Continue</Button>
+						</Modal>
+					{/if}
+				</form>
+			</div> -->
 		</div>
 	</div>
-</div>
-<Footer class="mb-2 p-2">
-	<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
-	<FooterCopyright href="/" by="ICL-2024" />
-</Footer>
+	<Footer class="mb-2 p-2">
+		<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+		<FooterCopyright href="/" by="ICL-2024" />
+	</Footer>
 {/if}
