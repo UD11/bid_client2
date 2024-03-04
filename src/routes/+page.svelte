@@ -89,7 +89,7 @@
 	let fileSizeLimitMB = 10;
 	let showerrortoast = false;
 	let toast_message = `some error occurred`;
-	let site_shutdown = false;
+	let site_shutdown = true;
 
 	const handlefilechange = async (event) => {
 		const fileInput = event.target;
