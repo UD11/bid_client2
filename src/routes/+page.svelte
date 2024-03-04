@@ -89,7 +89,7 @@
 	let fileSizeLimitMB = 10;
 	let showerrortoast = false;
 	let toast_message = `some error occurred`;
-	let site_shutdown = true;
+	let site_shutdown = false;
 
 	const handlefilechange = async (event) => {
 		const fileInput = event.target;
@@ -203,7 +203,7 @@
 				</div> -->
 			</div>
 
-			<!-- <Card class="h-auto">
+			<Card class="h-auto">
 				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 					We will meet you at the auction!
 				</h5>
@@ -211,8 +211,8 @@
 				<Button class="w-fit">
 					<a href="/list">Player List</a><ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
 				</Button>
-			</Card> -->
-			<div>
+			</Card>
+			<!-- <div>
 				<form>
 					<div class="mb-2 grid gap-6 md:grid-cols-2">
 						<div>
@@ -334,7 +334,7 @@
 						</Modal>
 					{/if}
 				</form>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<Footer class="mb-2 p-2">
